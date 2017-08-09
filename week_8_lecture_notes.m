@@ -126,8 +126,55 @@ for step = 1:L
     drawnow
 
 end
+%% RK double pendulum lecture
 
+% One way to describe a chaotic system is that it has sensitive dependance
+% on initial conditions.
+% Also any small error in integration method will be magnified in a chatoic
+% system (exponentially) in time.
+%% Double Pendulum
 
+% A very simple physical system that exhibits chaos.
+% Has a 4d phase space, which means to identify it in any give nstate I
+% need to know both thetas and both velocities of the masses:
+% d/dt theta1  d/dt thetat2, d/dt thetaDot1 and d/dt thetaDot2
+% Most integrators are trying to reduce timestep error. But even very small
+% errors at each deltat will take effect quickly in a chaotic system.
+% Alternatively we can try to utilize an integrator that preserves some
+% conserved quantities. 
+% What is a conserved quantity? In the doublle pendulum problem one is
+% energy. Integrators that conserve quantities as energy are called
+% symplectic.
+% Another is called a variational integrator which tries to make the Euler
+% Lagrange equations as close to true as possible, i.e. the d/dt
+% dL/dthetadot - dl/dtheta = 0.
+% These integrators are not general, because the conservation of quantity
+% aspects have to be tailored to every problem .They are therefore
+% specialized integrators.
+% We can see that ODE45 does not conserve energy.
+% When you want to check ode45 to see if it's behaving you can cut your dt
+% in half and see if it agrees.
+%% Example 2 is planetary motion
 
+% The planetary body problem is chaotic.
+% Around 1906 or 08 Poincare proved that there are no closed form analytic
+% solutions to the trajectories of the planets. This strongly motivated the
+% growth of numerical methods for integration etc.
+% JPL has several competing models to predict the solar system planetary
+% bodies as far into the future as possible called Ephemeris.
+% DE 431 for examaple has as very accurate prediction from 13201 BC to
+% 17191 AD.
+% Interesting. I wonder if the pendulum table model is mathematically
+% related to how matter/antimatter disparity plays out and leads to
+% dominance of one or the other. 
+% These are random, loosely coupled systems.
+% Fireflies do this too in some areas where they will start to blink in
+% unison.
+% Also believed to be related to siezures and brain network feedback.
+%% Example 3 Double Gyre
+
+% It's two fluids sort of mixing up. 
+% THis is used during oil spills for example to see where particle density
+% is the greatest to predict where the oil will collect. 
 
 
